@@ -1,10 +1,13 @@
 from flask import Flask, request
+from flask_cors import CORS  # ✅ Nuevo
 from dotenv import load_dotenv
 import os
 import yagmail
 
 load_dotenv()
 app = Flask(__name__)
+CORS(app)  # ✅ Permite solicitudes desde cualquier origen
+
 
 EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASS = os.getenv("EMAIL_PASS")
