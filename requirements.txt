@@ -1,4 +1,4 @@
-flask-cors
 flask
 yagmail
 python-dotenv
+flask-cors
