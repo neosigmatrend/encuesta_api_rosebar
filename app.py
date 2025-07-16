@@ -29,5 +29,11 @@ def responder():
         yag.send(to=EMAIL_DEST, subject="📨 Encuesta recibida", contents=cuerpo)
         return "OK"
     except Exception as e:
-        print("Error al enviar correo:", e)
+        print("❌ Error al enviar correo:", e)
         return "Error", 500
+
+# 👇 AGREGA ESTO AL FINAL
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
