@@ -6,7 +6,7 @@ import yagmail
 
 load_dotenv()
 app = Flask(__name__)
-CORS(app)  # ✅ Permite solicitudes desde cualquier origen
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # ✅ Este es el más robusto
 
 
 EMAIL_USER = os.getenv("EMAIL_USER")
